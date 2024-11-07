@@ -21,11 +21,12 @@ jobs:
         key: ${{ secrets.SSH_KEY }}           # Private SSH key for access
         script: |
 
-                pwd
 
                 sudo rm -rf res-back
 
                 sudo git clone https://github.com/Jai2082001/res-back.git 
+
+                pwd
 
                 sudo mv capstone-back/firebaseAdmin.json res-back/passport/
 
