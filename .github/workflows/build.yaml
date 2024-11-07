@@ -25,15 +25,13 @@ jobs:
 
                 sudo rm -rf res-back
 
-                sudo git clone https://github.com/Jai2082001/res-back.git
-
-                sudo ls -a 
+                sudo git clone https://github.com/Jai2082001/res-back.git 
 
                 sudo mv capstone-back/firebaseAdmin.json res-back/passport/
 
                 sudo mv capstone-back/.env res-back
 
-                cd /res-back
+                cd res-back
 
                 sudo npm install
 
