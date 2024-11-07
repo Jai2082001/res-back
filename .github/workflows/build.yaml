@@ -20,6 +20,9 @@ jobs:
         username: ${{ secrets.SSH_USERNAME }}  # SSH username on the GCP instance
         key: ${{ secrets.SSH_KEY }}           # Private SSH key for access
         script: |
+
+                pwd
+
                 sudo rm -rf res-back
 
                 sudo git clone https://github.com/Jai2082001/res-back.git
@@ -30,7 +33,7 @@ jobs:
 
                 sudo mv capstone-back/.env res-back
 
-                sudo cd /res-back
+                cd /res-back
 
                 sudo npm install
 
