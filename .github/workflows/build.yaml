@@ -26,7 +26,7 @@ jobs:
 
                 sudo git clone https://github.com/Jai2082001/res-back.git 
 
-                pwd
+                ls -a
 
                 sudo mv capstone-back/firebaseAdmin.json res-back/passport/
 
