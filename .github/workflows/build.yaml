@@ -36,8 +36,6 @@ jobs:
 
                 sudo npm install
 
-                sudo npm install -g pm2 
-
                 sudo pm2 start ./index.js --name "express-app" || pm2 restart "express-app"
 
                 sudo pm2 save
