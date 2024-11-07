@@ -28,9 +28,9 @@ jobs:
 
                 ls -a
 
-                sudo mv firebaseAdmin.json res-back/passport/
+                sudo cp firebaseAdmin.json res-back/passport/
 
-                sudo mv .env res-back
+                sudo cp .env res-back
 
                 cd res-back
 
