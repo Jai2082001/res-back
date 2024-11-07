@@ -23,6 +23,9 @@ app.use(cors({
     credentials: true
 }));
 
+app.set('trust proxy', true); // This is necessary for trusting the forwarded headers
+
+
 app.use(passport.initialize())
 
 app.get('/auth/google', passport.authenticate('google', { scope: ['profile', 'email'] }))
@@ -55,9 +58,9 @@ app.get(
         );
 
         res.cookie('token', token, {
-            httpOnly: true,  // Prevents JavaScript access to the cookie
-            secure: process.env.NODE_ENV === 'production',  // Only send in production over HTTPS
-            sameSite: 'Strict',  // Limits cookie to your site only
+            httpsOnly: true,  // Prevents JavaScript access to the cookie
+            secure: true,  // Only send in production over HTTPS
+            sameSite: 'none',  // Limits cookie to your site only
             maxAge: 24 * 60 * 60 * 1000  // 1 day
         });
 
