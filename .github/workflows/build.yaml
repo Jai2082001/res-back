@@ -35,8 +35,10 @@ jobs:
                 cd res-back
 
                 sudo npm install
+                
+                sudo pm2 delete express-app
 
-                sudo pm2 start ./index.js --name "express-app" || pm2 restart "express-app"
+                sudo pm2 start ./index.js --name "express-app" 
 
                 sudo pm2 save
 
