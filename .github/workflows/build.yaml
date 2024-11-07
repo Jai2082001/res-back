@@ -1,0 +1,44 @@
+name: Deploy to GCP Compute Engine
+
+on:
+  push:
+    branches:
+      - main  # Trigger on push to any branch; you may restrict to specific branches if desired
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Check Out Repository
+      uses: actions/checkout@v2
+
+    - name: Deploy to GCP Compute Engine
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.GCP_HOST }}       # GCP instance IP address
+        username: ${{ secrets.GCP_USERNAME }}  # SSH username on the GCP instance
+        key: ${{ secrets.SSH_KEY }}           # Private SSH key for access
+        script: |
+          # Navigate to project directory or clone if it doesn't exist
+          if [ ! -d "/capstone-back" ]; then
+            git clone https://github.com/yourusername/yourrepo.git /capstone-back
+          else
+            cd /capstone-back
+            git pull origin main  # Pull latest changes from the main branch
+          fi
+
+          # Navigate to project directory
+          cd /path/to/your/project
+
+          # Install Node.js dependencies
+          npm install
+
+          # Restart the server using PM2 (install PM2 globally if not done yet)
+          if ! command -v pm2 &> /dev/null; then
+            npm install -g pm2
+          fi
+          
+          # Start or restart the Express server
+          pm2 start ./server.js --name "express-app" || pm2 restart "express-app"
+          pm2 save
