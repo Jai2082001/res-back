@@ -93,7 +93,7 @@ app.get('/cart/delete/productId', cartroutes)
 app.get('/', (req, res, next) => {
     console.log('here we are');
     console.log(req.cookies)
-    res.send({ status: 'hello' })
+    res.send({ status: 'hello1' })
 })
 mongoConnect(() => {
     app.listen(port, () => {
