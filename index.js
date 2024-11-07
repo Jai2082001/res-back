@@ -51,6 +51,8 @@ app.get(
             response._id = existingUser._id
         }
 
+        console.log('user', existingUser)
+
         const token = jwt.sign(
             { uid: req.user.uid, email: req.user.email, id: response._id },
             process.env.JWT_SECRET,
