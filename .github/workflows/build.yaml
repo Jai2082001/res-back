@@ -21,25 +21,25 @@ jobs:
         key: ${{ secrets.SSH_KEY }}           # Private SSH key for access
         script: |
 
-                rm -rf res-back
+                sudo rm -rf res-back
 
-                git clone https://github.com/Jai2082001/res-back.git
+                sudo git clone https://github.com/Jai2082001/res-back.git
 
-                ls -a 
+                sudo ls -a 
 
-                mv capstone-back/firebaseAdmin.json res-back/passport/
+                sudo mv capstone-back/firebaseAdmin.json res-back/passport/
 
-                mv capstone-back/.env res-back
+                sudo mv capstone-back/.env res-back
 
-                cd /res-back
+                sudo cd /res-back
 
-                npm install
+                sudo npm install
 
-                npm install -g pm2 
+                sudo npm install -g pm2 
 
-                pm2 start ./index.js --name "express-app" || pm2 restart "express-app"
+                sudo pm2 start ./index.js --name "express-app" || pm2 restart "express-app"
 
-                pm2 save
+                sudo pm2 save
 
 
         #   # Navigate to project directory or clone if it doesn't exist
