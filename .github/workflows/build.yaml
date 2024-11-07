@@ -19,7 +19,7 @@ jobs:
         host: ${{ secrets.GCP_HOST }}       # GCP instance IP address
         username: ${{ secrets.SSH_USERNAME }}  # SSH username on the GCP instance
         key: ${{ secrets.SSH_KEY }}           # Private SSH key for access
-        script: |
+        run: |
                 sudo rm -rf res-back
 
                 sudo git clone https://github.com/Jai2082001/res-back.git
