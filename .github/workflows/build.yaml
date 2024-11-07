@@ -17,8 +17,15 @@ jobs:
       uses: appleboy/ssh-action@master
       with:
         host: ${{ secrets.GCP_HOST }}       # GCP instance IP address
-        username: ${{ secrets.GCP_USERNAME }}  # SSH username on the GCP instance
-        key: ${{ secrets.SSH_KEY }}           # Private SSH key for access
+        username: groverjaideep1  # SSH username on the GCP instance
+        key: |
+            -----BEGIN OPENSSH PRIVATE KEY-----
+            b3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAAAMwAAAAtzc2gtZW
+            QyNTUxOQAAACABIH+FRmwZIZPQXGP5FOjrER/H1HM1C7t2yUIIC41taQAAAJhwLEtqcCxL
+            agAAAAtzc2gtZWQyNTUxOQAAACABIH+FRmwZIZPQXGP5FOjrER/H1HM1C7t2yUIIC41taQ
+            AAAEC5ameDGz7Geq9yEnv2Kb0mdA2bDQyZoUtTPVQv45ceOQEgf4VGbBkhk9BcY/kU6OsR
+            H8fUczULu3bJQggLjW1pAAAADmdyb3ZlcmphaWRlZXAxAQIDBAUGBw==
+            -----END OPENSSH PRIVATE KEY-----           # Private SSH key for access
         script: |
           # Navigate to project directory or clone if it doesn't exist
           if [ ! -d "/capstone-back" ]; then
