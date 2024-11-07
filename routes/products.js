@@ -66,6 +66,7 @@ router.get('/api/products', async (req, res) => {
     const allProducts = await Product.find({});
     res.status(201).json(allProducts)
   } catch (error) {
+    console.log(error)
     res.status(501).json("Error Occured")
   }
 
