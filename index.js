@@ -28,6 +28,8 @@ app.use(cors({
 
 app.use(passport.initialize())
 
+app.enable('trust proxy')
+
 app.get('/auth/google', passport.authenticate('google', { scope: ['profile', 'email'] }))
 
 app.get(
@@ -59,7 +61,6 @@ app.get(
 
         res.cookie('token', token, {
             httpOnly: true,  // Prevents JavaScript access to the cookie
-            secure: process.env.NODE_ENV === 'production',  // Only send in production over HTTPS
             sameSite: 'Strict',  // Limits cookie to your site only
             maxAge: 24 * 60 * 60 * 1000  // 1 day
         });
