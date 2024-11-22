@@ -111,7 +111,7 @@ app.get('/order-action', checkoutrouter);
 app.get('/', (req, res, next) => {
     console.log('here we are');
     console.log(req.cookies)
-    res.send({ status: 'hello sir' })
+    res.send({ status: 'hello sir updated code' })
 })
 mongoConnect(() => {
     app.listen(port, () => {
