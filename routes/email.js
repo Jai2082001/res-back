@@ -76,13 +76,13 @@ router.post('/api/tweet', (req, res, next) => {
   myHeaders.append("Authorization", "OAuth oauth_consumer_key=\"Tw4L0YpkIg3Sxv5hIgsIsMXsf\",oauth_token=\"1772748771404685312-0kveP1p5U8Txt6YYQKpmVkoDO9zHDz\",oauth_signature_method=\"HMAC-SHA1\",oauth_timestamp=\"1732227998\",oauth_nonce=\"sdXWSuu74yX\",oauth_version=\"1.0\",oauth_signature=\"sVVpq78btg2VP1RTxEpqCCt5v2M%3D\"");
   // console.log(text)
   const raw = JSON.stringify({
-    "text": text.tweetText
+    "text": req.body.tweetText
   });
 
   const requestOptions = {
     method: "POST",
     headers: myHeaders,
-    body: req.body,
+    body:raw,
     redirect: "follow"
   };
 
