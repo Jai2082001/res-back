@@ -77,7 +77,7 @@ router.post('/api/tweet', (req, res, next) => {
   myHeaders.append("Cookie", "guest_id=v1%3A173237299086891405; guest_id_ads=v1%3A173237299086891405; guest_id_marketing=v1%3A173237299086891405; personalization_id=\"v1_qzg6IAbcDHcKd8ScgHUlmg==\"");
   
   const raw = JSON.stringify({
-    "text": req.body.twitterText
+    "text": req.body
   });
   
   const requestOptions = {
