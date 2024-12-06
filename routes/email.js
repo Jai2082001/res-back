@@ -73,7 +73,7 @@ router.post('/api/tweet', (req, res, next) => {
   
   const myHeaders = new Headers();
   myHeaders.append("Content-Type", "application/json");
-  myHeaders.append("Authorization", "OAuth oauth_consumer_key=\"Tw4L0YpkIg3Sxv5hIgsIsMXsf\",oauth_token=\"1772748771404685312-0kveP1p5U8Txt6YYQKpmVkoDO9zHDz\",oauth_signature_method=\"HMAC-SHA1\",oauth_timestamp=\"1732373052\",oauth_nonce=\"urvL3vcm2kR\",oauth_version=\"1.0\",oauth_signature=\"LHQSqJRiQKpCToIiWrP5wmRDsmI%3D\"");
+  myHeaders.append("Authorization", "OAuth oauth_consumer_key=\"Tw4L0YpkIg3Sxv5hIgsIsMXsf\",oauth_token=\"1772748771404685312-0kveP1p5U8Txt6YYQKpmVkoDO9zHDz\",oauth_signature_method=\"HMAC-SHA1\",oauth_timestamp=\"1733524929\",oauth_nonce=\"lguxZ7rpFLd\",oauth_version=\"1.0\",oauth_signature=\"hjim3ri5a1wyq%2F6xrwyevbDdQXE%3D\"");
   myHeaders.append("Cookie", "guest_id=v1%3A173237299086891405; guest_id_ads=v1%3A173237299086891405; guest_id_marketing=v1%3A173237299086891405; personalization_id=\"v1_qzg6IAbcDHcKd8ScgHUlmg==\"");
   console.log(req.body)
   const raw = JSON.stringify({
