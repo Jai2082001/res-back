@@ -6,7 +6,7 @@ const mongoClient = mongoDb.MongoClient;
 let db;
 
 const mongoConnect = (callback) => {
-    mongoose.connect('mongodb+srv://jaideeGrover:UBOwimNdbkRlrKKL@cluster0.wztcd.mongodb.net/newCapstoneDatbase?retryWrites=true&w=majority&appName=Cluster0'
+    mongoose.connect(`${process.env.DBURL}`
         , {
         useNewUrlParser: true,
         useUnifiedTopology: true
